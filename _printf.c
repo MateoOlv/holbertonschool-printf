@@ -10,4 +10,5 @@ int _printf(const char *format, ...)
 		{ NULL, NULL }
 	};
 	va_start(args, format);
+
 }
