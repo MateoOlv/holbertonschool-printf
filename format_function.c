@@ -25,9 +25,7 @@ int print_s(va_list args)
 }
 int print_mod(va_list args)
 {
-	/*no used*/
 	(void) args;
 	write(1, "%", 1);
-	/*success*/
 	return (1);
 }
