@@ -1,4 +1,10 @@
 #include "main.h"
+
+/**
+ *get_format - opatin the format from the lits
+ *@args: args
+ *@s: format
+ */
 int get_format(va_list args, char s)
 {
 	unsigned int a = 0;
@@ -20,12 +26,17 @@ int get_format(va_list args, char s)
 	}
 	return (1);
 }
-
+/**
+ *_printf - printf clone
+ *@format: format
+ *Return: return
+ *
+ */
 int _printf(const char *format, ...)
 {
 	int i, b1;
 	va_list args;
-	
+
 	va_start(args, format);
 	if (format != NULL)
 	{
@@ -44,5 +55,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	return(b1);
+	return (b1);
 }
