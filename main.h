@@ -10,12 +10,12 @@
 typedef struct form
 {
 	char *form;
-	void (*f)(va_list args);
+	int (*f)(va_list args);
 } ft;
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_c(va_list args);
-void print_s(va_list args);
-void print_mod(va_list args);
+int print_c(va_list args);
+int print_s(va_list args);
+int print_mod(va_list args);
 
 #endif
