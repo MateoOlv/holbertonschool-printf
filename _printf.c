@@ -2,7 +2,7 @@
 
 int get_format(va_list args, char s)
 {
-	int a = 0;
+	unsigned int a = 0;
 
 	ft formats[] = {
 		{ "c", print_c },
