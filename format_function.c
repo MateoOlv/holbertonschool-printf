@@ -2,8 +2,9 @@
 
 int print_c(va_list args)
 {
-	_putchar(va_arg(args, int));
-	//success
+	char a = va_arg(args, int);
+	write(1, &a, 1);
+	/*success*/
 	return(1);
 }
 int print_s(va_list args)
@@ -12,21 +13,21 @@ int print_s(va_list args)
 	char *string = va_arg(args, char *);
 	if (string == NULL)
 	{
-		//empty string
+		/*empty string*/
 		return (0);
 	}
 	for (s = 0; string[s]; s++)
 	{
-		_putchar(string[s])
+		write(1, &string[s], 1);
 	}
-	//success
+	/*success*/
 	return (s);
 }
 int print_mod(va_list args)
 {
-	//no used
+	/*no used*/
 	(void) args;
-	_purchar('%');
-	//success
+	write(1, "%", 1);
+	/*success*/
 	return (1);
 }
