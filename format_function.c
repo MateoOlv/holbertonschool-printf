@@ -44,3 +44,36 @@ int print_mod(va_list args)
 	write(1, "%", 1);
 	return (1);
 }
+
+int print_i(va_list args)
+{
+	int i, i2, n, n2, b1 = 0;
+	n = va_arg(args, int);
+
+	if (n == 0)
+	{
+		write(1, n, 1);
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n *= -1;
+	}
+	n2 = n;
+	while (n2 > 0)
+	{
+		b1++;
+		n2 /= 10;
+	}
+	if (b1 == 0)
+	{
+		return(0);
+	}
+	i = b1 - 1;
+	for (; i >= 0; i--)
+	{
+		for (i2 = 0; i2 < i; i2++)
+		{
+		}
+	}
+}
