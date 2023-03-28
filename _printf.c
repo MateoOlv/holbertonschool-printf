@@ -1,5 +1,4 @@
 #include "main.h"
-
 int get_format(va_list args, char s)
 {
 	unsigned int a = 0;
@@ -32,14 +31,14 @@ int _printf(const char *format, ...)
 	{
 		for (i = 0; format[i]; i++)
 		{
-			if (format[i + 1] == '%')
+			if (format[i] == '%')
 			{
 				b1 += get_format(args, format[i + 1]);
 				i++;
 			}
 			else
 			{
-				_putchar(format[i]);
+				write(1, &format[i], 1);
 				b1++;
 			}
 		}
