@@ -15,7 +15,7 @@ int print_c(va_list args)
 /**
  *print_s - print string
  *@args: args
- *Return: 0
+ *Return: s
  */
 int print_s(va_list args)
 {
@@ -24,8 +24,7 @@ int print_s(va_list args)
 
 	if (string == NULL)
 	{
-		/*empty string*/
-		return (0);
+		string = "(nil)";
 	}
 	for (s = 0; string[s]; s++)
 	{

@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- *get_format - opatin the format from the lits
+ * get_format - format
  *@args: args
  *@s: format
+ *Return: return
  */
 int get_format(va_list args, char s)
 {
@@ -24,6 +25,8 @@ int get_format(va_list args, char s)
 		}
 		a++;
 	}
+
+	write(1, &s, 1);
 	return (1);
 }
 /**
@@ -34,24 +37,30 @@ int get_format(va_list args, char s)
  */
 int _printf(const char *format, ...)
 {
-	int i, b1;
+	int i, b1 = 0;
 	va_list args;
 
 	va_start(args, format);
-	if (format != NULL)
+
+	if (format == NULL)
 	{
-		for (i = 0; format[i]; i++)
+		return (-1);
+	}
+	for (i = 0; format[i]; i++)
+	{
+		if (format[i] == '%')
 		{
-			if (format[i] == '%')
+			if (format[i + 1] == '\0')
 			{
-				b1 += get_format(args, format[i + 1]);
-				i++;
+				return (-1);
 			}
-			else
-			{
-				write(1, &format[i], 1);
-				b1++;
-			}
+			b1 += get_format(args, format[i + 1]);
+			i++;
+		}
+		else
+		{
+			write(1, &format[i], 1);
+			b1++;
 		}
 	}
 	va_end(args);
