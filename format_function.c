@@ -24,7 +24,7 @@ int print_s(va_list args)
 
 	if (string == NULL)
 	{
-		string = "(nil)";
+		string = "(null)";
 	}
 	for (s = 0; string[s]; s++)
 	{
@@ -44,7 +44,7 @@ int print_mod(va_list args)
 	write(1, "%", 1);
 	return (1);
 }
-
+/*
 int print_i(va_list args)
 {
 	int i, i2, n, n2, b1 = 0;
@@ -76,4 +76,4 @@ int print_i(va_list args)
 		{
 		}
 	}
-}
+}*/
