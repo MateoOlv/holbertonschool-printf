@@ -39,7 +39,7 @@ int get_format(va_list args, char s)
  */
 int _printf(const char *format, ...)
 {
-	int i, b1 = 0;
+	int i = 0, b1 = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -48,22 +48,23 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	for (i = 0; format[i]; i++)
+	for (; format[i]; i++)
 	{
-		if (format[i] == '%')
-		{
-			if (format[i + 1] == '\0')
-			{
-				return (-1);
-			}
-			b1 += get_format(args, format[i + 1]);
-			i++;
-		}
+	if (format[i] == '%')
+	{
+		if (format[i + 1] == '\0')
+			return (-1);
+		if (get_format(args, format[i + 1]))
+		{ b1 += get_format(args, format[i + 1]);
+			i++; }
 		else
 		{
 			write(1, &format[i], 1);
-			b1++;
-		}
+			b1++; }
+	}
+	else
+	{ write(1, &format[i], 1);
+		b1++; }
 	}
 	va_end(args);
 	return (b1);
