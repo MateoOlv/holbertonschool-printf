@@ -44,20 +44,24 @@ int print_mod(va_list args)
 	write(1, "%", 1);
 	return (1);
 }
-
+/**
+ *print_int - print any int
+ *@args: list args
+ *Return: return
+ */
 int print_int(va_list args)
 {
 	int i = va_arg(args, int), i2 = 1, form = 0;
-       unsigned int sig, pri;
+	unsigned int sig, pri;
 	char a = '-';
 
 	if (i < 0)
 	{ form += write(1, &a, 1);
 	sig = i * -1; }
 	else
-		sig = i;
+	sig = i;
 	while ((sig / i2) > 9)
-		i2 = i2 * 10;
+	i2 = i2 * 10;
 	while (i2 != 0)
 	{ pri = '0' + sig / i2;
 	form += write(1, &pri, 1);
