@@ -16,10 +16,11 @@ int get_format(va_list args, char s)
 		{ "%", print_mod },
 		{ "i", print_int },
 		{ "d", print_int },
+		{ "b", print_b },
 		{ NULL, NULL }
 	};
 
-	while (a < 5)
+	while (a < 6)
 	{
 		if (*formats[a].form == s)
 		{
