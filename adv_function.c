@@ -20,3 +20,4 @@ int print_b(va_list args)
 	}
 	return (b1);
 }
+
