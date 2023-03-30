@@ -28,8 +28,9 @@ int get_format(va_list args, char s)
 		a++;
 	}
 
-
-	return (1);
+	write(1, "%", 1);
+	write(1, &s, 1);
+	return (2);
 }
 /**
  *_printf - printf clone
@@ -43,28 +44,23 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	va_start(args, format);
-
 	if (format == NULL)
-	{
 		return (-1);
-	}
-	for (; format[i]; i++)
+	while (format[i])
 	{
-	if (format[i] == '%')
-	{
-		if (format[i + 1] == '\0')
-			return (-1);
-		if (get_format(args, format[i + 1]))
-		{ b1 += get_format(args, format[i + 1]);
-			i++; }
+		if (format[i] == '%')
+		{
+			if (!format[i + 1])
+			{return (-1); }
+			b1 += get_format(args, format[i + 1]);
+			i++; 
+		}
 		else
 		{
 			write(1, &format[i], 1);
-			b1++; }
-	}
-	else
-	{ write(1, &format[i], 1);
-		b1++; }
+			b1++;
+		}
+		i++;
 	}
 	va_end(args);
 	return (b1);
