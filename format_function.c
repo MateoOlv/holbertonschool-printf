@@ -44,36 +44,24 @@ int print_mod(va_list args)
 	write(1, "%", 1);
 	return (1);
 }
-/*
-int print_i(va_list args)
-{
-	int i, i2, n, n2, b1 = 0;
-	n = va_arg(args, int);
 
-	if (n == 0)
-	{
-		write(1, n, 1);
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-	}
-	n2 = n;
-	while (n2 > 0)
-	{
-		b1++;
-		n2 /= 10;
-	}
-	if (b1 == 0)
-	{
-		return(0);
-	}
-	i = b1 - 1;
-	for (; i >= 0; i--)
-	{
-		for (i2 = 0; i2 < i; i2++)
-		{
-		}
-	}
-}*/
+int print_int(va_list args)
+{
+	int i = va_arg(args, int), i2 = 1, form = 0;
+       unsigned int sig, pri;
+	char a = '-';
+
+	if (i < 0)
+	{ form += write(1, &a, 1);
+	sig = i * -1; }
+	else
+		sig = i;
+	while ((sig / i2) > 9)
+		i2 = i2 * 10;
+	while (i2 != 0)
+	{ pri = '0' + sig / i2;
+	form += write(1, &pri, 1);
+	sig %= i2;
+	i2 /= 10; }
+	return (form);
+}

@@ -16,5 +16,5 @@ int _printf(const char *format, ...);
 int print_c(va_list args);
 int print_s(va_list args);
 int print_mod(va_list args);
-
+int print_int(va_list args);
 #endif

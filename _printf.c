@@ -14,10 +14,12 @@ int get_format(va_list args, char s)
 		{ "c", print_c },
 		{ "s", print_s },
 		{ "%", print_mod },
+		{ "i", print_int },
+		{ "d", print_int },
 		{ NULL, NULL }
 	};
 
-	while (a < 3)
+	while (a < 5)
 	{
 		if (*formats[a].form == s)
 		{
@@ -26,7 +28,7 @@ int get_format(va_list args, char s)
 		a++;
 	}
 
-	write(1, &s, 1);
+
 	return (1);
 }
 /**
