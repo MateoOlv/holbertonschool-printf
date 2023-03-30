@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 			if (!format[i + 1])
 			{return (-1); }
 			b1 += get_format(args, format[i + 1]);
-			i++; 
+			i++;
 		}
 		else
 		{
