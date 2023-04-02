@@ -1,0 +1,45 @@
+Name:
+
+_printf
+
+Description
+
+The printf() function sends a formatted string to the standard output (the display). This string can display formatted variables and special control characters, such as new lines (‘\n’), backspaces (‘\b’) and tabspaces (‘\t’); these
+
+Format:
+
+The printf format string is a control parameter used by a class of functions in the input/output libraries of C and many other programming languages. The string is written in a simple template language: characters are usually copied literally into the function's output, but format specifiers, which start with a % character, indicate the location and method to translate a piece of data (such as a number) to characters
+
+Format Types:
+
+%c: Print a character
+%C: Print a wide character
+%d: Print a decimal number
+%i: Print a decimal number
+%s: Print a string
+%f: Printf a float
+%u: Print an unsigned integer
+
+Code Example 1:
+
+_printf ("Hello, my name is: %s" "Diego");
+
+output:
+
+Hello my name is Diego.
+
+Code Example 2:
+
+_printf ("I am %d years old" "18");
+
+output:
+
+I am 18 years old.
+
+Code Example 3:
+
+_printf ("My favourite is: %s" "Football");
+
+output:
+
+My favourite sport is Football.
