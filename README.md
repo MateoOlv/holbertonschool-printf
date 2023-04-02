@@ -2,7 +2,10 @@
 
 <img src="https://apply.holbertonschool.com/holberton-logo.png" />
 <h1> _printf </h1>
-  
+<details>
+<summary>FlowChart</summary>
+<img src="https://cdn.discordapp.com/attachments/894630775851475025/1092123181403353278/Screenshot_2.jpg" />
+</details>
 </div>
 
 <br>
