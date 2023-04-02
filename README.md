@@ -125,35 +125,53 @@ The function works by receiving an argument which is related within the function
 <summary>Examples</summary>
 
 ### Character
-```
+  Indicate a Char format
+```C
 _printf("Character:[%c]\n", 'H');
 Character:[H]
 ```
 
 ### String
-```
-_printf();
+  Indicate a String format
+```C
+_printf("String:[%s]\n", "I am a string !");
+String:[I am a string !]
 ```
 
 ### %%
-```
-_printf();
+  Print just one %
+```C
+_printf(Percent:[%%]\n");
+Percent:[%]
 ```
 
 ### Decimal Integer
-```
-_printf();
+  Indicate a Decimal Integer format
+```C
+_printf("I have %i cats.\n", 2);
+I have 2 cats
 ```
 
 ### Integer
-```
-_printf();
+  Indicate a Integer format
+```C
+_printf("The temperature today is %i degrees Celsius.", 20);
+  The temperature today is 20 degrees Celsius.
 ```
 
 </details>
 
 ## Resources
+* <a href="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/misc/2022/11/d38f88e96a617135804dca9f9c49632751e06aa7.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230402%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230402T155050Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=01c63766891dd8806fe775a787a4a5ec6a3f31e23cf3b9b2b14a7c32313f85aa">[Printf Secrets]</a>
+* <a href="https://intranet.hbtn.io/concepts/893">[Group Projects]</a>
+* <a href="https://intranet.hbtn.io/concepts/881">[Approaching a Project]</a>
+* <a href="https://intranet.hbtn.io/concepts/895">[Flowcharts]</a>
 
+<div align="center">
+  
 ## Credits
+ 
+&ensp;[<img src="https://img.shields.io/badge/MateoOlv-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">](https://github.com/MateoOlv)
+&ensp;[<img src="https://img.shields.io/badge/Diego29012-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Diego29012)
 
-#### 
+</div>
